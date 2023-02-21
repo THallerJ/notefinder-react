@@ -1,0 +1,327 @@
+<svg
+			width="1300"
+			viewBox="0 0 118.19833 17.639618"
+			version="1.1"
+			id="fretboardSvg"
+			xml:space="preserve"
+			sodipodi:docname="fretboard.svg"
+			inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+			xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+			xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+			xmlns="http://www.w3.org/2000/svg"
+			xmlns:svg="http://www.w3.org/2000/svg"
+		>
+			<sodipodi:namedview
+				id="namedview33"
+				pagecolor="#ffffff"
+				bordercolor="#000000"
+				borderopacity="0.25"
+				inkscape:showpageshadow="false"
+				inkscape:pageopacity="0"
+				inkscape:pagecheckerboard="true"
+				inkscape:deskcolor="#d1d1d1"
+				inkscape:document-units="mm"
+				showgrid="false"
+				showborder="false"
+				borderlayer="false"
+				inkscape:zoom="3.3778501"
+				inkscape:cx="240.83366"
+				inkscape:cy="34.933463"
+				inkscape:window-width="2560"
+				inkscape:window-height="1334"
+				inkscape:window-x="-11"
+				inkscape:window-y="-11"
+				inkscape:window-maximized="1"
+				inkscape:current-layer="svg3108"
+			/>
+			<defs id="defs3105" />
+			<path
+				id="fretboard"
+				style="
+					display: inline;
+					fill: #332617;
+					fill-rule: evenodd;
+					stroke-width: 0.264583;
+				"
+				d="M 117.97954,17.639639 -4.417753e-6,16.253869 0.31708558,1.1402788 118.16588,8.8006074e-6 Z"
+			/>
+			<g
+				id="frets"
+				transform="rotate(179,196.84328,192.51967)"
+				style="display: inline; fill: #917c6f"
+				inkscape:label="frets"
+			>
+				<path
+					id="fret0"
+					style="
+						display: inline;
+						fill: #f4eed7;
+						fill-rule: evenodd;
+						stroke-width: 0.500161;
+					"
+					d="m 386.20466,372.09207 1.00115,0.0633 -0.35252,15.15104 -1.05981,-0.0384 z"
+					inkscape:label="nut"
+				/>
+				<path
+					id="fret1"
+					style="
+						display: inline;
+						fill: #ac9d93;
+						fill-rule: evenodd;
+						stroke-width: 0.264583;
+					"
+					d="m 373.59873,371.7444 0.2456,-0.0277 -0.32913,15.44141 -0.26181,0.008 z"
+					transform="translate(1.1760457e-5)"
+					inkscape:label="fret1"
+				/>
+				<path
+					id="fret2"
+					style="
+						display: inline;
+						fill: #ac9d93;
+						fill-rule: evenodd;
+						stroke-width: 0.264583;
+					"
+					d="m 361.65542,371.36236 0.25216,0.005 -0.35773,15.71991 -0.27023,-0.007 z"
+					inkscape:label="fret2"
+				/>
+				<path
+					id="fret3"
+					style="
+						display: inline;
+						fill: #ac9d93;
+						fill-rule: evenodd;
+						stroke-width: 0.264583;
+					"
+					d="m 350.50761,371.02494 0.14697,4.9e-4 -0.24984,15.96657 -0.26776,-0.01 z"
+					inkscape:label="fret3"
+				/>
+				<path
+					id="fret4"
+					style="
+						display: inline;
+						fill: #ac9d93;
+						fill-rule: evenodd;
+						stroke-width: 0.264583;
+					"
+					d="m 340.03661,370.70691 0.18654,0.0361 -0.27289,16.17761 -0.21121,-0.01 z"
+					inkscape:label="fret4"
+				/>
+				<path
+					id="fret5"
+					style="
+						display: inline;
+						fill: #ac9d93;
+						fill-rule: evenodd;
+						stroke-width: 0.264583;
+					"
+					d="m 330.43785,370.44553 0.11064,0.003 -0.31304,16.37397 -0.26181,0.008 z"
+					inkscape:label="fret5"
+				/>
+				<path
+					id="fret6"
+					style="
+						display: inline;
+						fill: #ac9d93;
+						fill-rule: evenodd;
+						stroke-width: 0.266688;
+					"
+					d="m 321.05817,370.16536 0.18841,0.008 -0.34779,16.58628 -0.20228,-8.9e-4 z"
+					inkscape:label="fret6"
+				/>
+				<path
+					id="fret7"
+					style="
+						display: inline;
+						fill: #ac9d93;
+						fill-rule: evenodd;
+						stroke-width: 0.26619;
+					"
+					d="m 312.25776,369.91472 0.14079,0.002 -0.29022,16.78042 -0.21715,0.002 z"
+					inkscape:label="fret7"
+				/>
+				<path
+					id="fret8"
+					style="
+						display: inline;
+						fill: #ac9d93;
+						fill-rule: evenodd;
+						stroke-width: 0.265806;
+					"
+					d="m 304.18894,369.67973 0.20288,-0.005 -0.41107,16.95879 -0.22392,-0.005 z"
+					inkscape:label="fret8"
+				/>
+				<path
+					id="fret9"
+					style="
+						display: inline;
+						fill: #ac9d93;
+						fill-rule: evenodd;
+						stroke-width: 0.265334;
+					"
+					d="m 296.1063,369.44491 0.27445,-4.5e-4 -0.37215,17.12293 -0.24497,0.004 z"
+					inkscape:label="fret9"
+				/>
+				<path
+					id="fret10"
+					style="
+						display: inline;
+						fill: #ac9d93;
+						fill-rule: evenodd;
+						stroke-width: 0.265034;
+					"
+					d="m 288.92315,369.22734 0.23903,-0.0101 -0.29367,17.31609 -0.3154,-0.0218 z"
+					inkscape:label="fret10"
+				/>
+				<path
+					id="fret11"
+					style="
+						display: inline;
+						fill: #ac9d93;
+						fill-rule: evenodd;
+						stroke-width: 0.264742;
+					"
+					d="m 281.90323,369.00514 0.26182,0.0248 -0.32873,17.43868 -0.30391,0.008 z"
+					inkscape:label="fret11"
+				/>
+				<path
+					id="fret12"
+					style="
+						display: inline;
+						fill: #ac9d93;
+						fill-rule: evenodd;
+						stroke-width: 0.265538;
+					"
+					d="m 275.44668,368.82277 0.26182,0.0249 -0.33056,17.54371 -0.30391,0.008 z"
+					inkscape:label="fret12"
+				/>
+			</g>
+			<g
+				id="inlays"
+				style="display: inline; fill: #e3dedb"
+				transform="rotate(179,197.30136,192.69382)"
+				inkscape:label="inlays"
+			>
+				<ellipse
+					style="
+						display: inline;
+						fill: #ffffff;
+						fill-opacity: 1;
+						stroke-width: 0.264583;
+					"
+					id="fret3inlay"
+					cx="357.16101"
+					cy="379.55725"
+					rx="0.97667789"
+					ry="0.94299936"
+					inkscape:label="fret3inlay"
+				/>
+				<ellipse
+					style="
+						display: inline;
+						fill: #ffffff;
+						fill-opacity: 1;
+						stroke-width: 0.264583;
+					"
+					id="fret5inlay"
+					cx="336.11194"
+					cy="379.01843"
+					rx="0.97667789"
+					ry="0.94299936"
+					inkscape:label="fret5inlay"
+				/>
+				<ellipse
+					style="
+						display: inline;
+						opacity: 1;
+						fill: #ffffff;
+						fill-opacity: 1;
+						stroke-width: 0.264583;
+					"
+					id="fret7inlay"
+					cx="317.4877"
+					cy="378.64795"
+					rx="0.97667789"
+					ry="0.94299936"
+					inkscape:label="fret7inlay"
+				/>
+				<ellipse
+					style="
+						display: inline;
+						fill: #ffffff;
+						fill-opacity: 1;
+						stroke-width: 0.264583;
+					"
+					id="fret9inlay"
+					cx="301.01889"
+					cy="378.34485"
+					rx="0.97667789"
+					ry="0.94299936"
+				/>
+				<ellipse
+					style="
+						display: inline;
+						fill: #ffffff;
+						fill-opacity: 1;
+						stroke-width: 0.264583;
+					"
+					id="fret12inlay1"
+					cx="279.4646"
+					cy="381.64536"
+					rx="0.97667789"
+					ry="0.94299936"
+					inkscape:label="fret12inlay1"
+				/>
+				<ellipse
+					style="
+						display: inline;
+						fill: #ffffff;
+						fill-opacity: 1;
+						stroke-width: 0.264583;
+					"
+					id="fret12inlay2"
+					cx="279.59933"
+					cy="374.06766"
+					rx="0.97667789"
+					ry="0.94299936"
+					inkscape:label="fret12inlay2"
+				/>
+			</g>
+			<g
+				id="strings"
+				transform="rotate(179,197.30037,192.74895)"
+				style="display: inline"
+				inkscape:label="strings"
+			>
+				<path
+					id="lowE"
+					style="fill: #b3b3b3; fill-rule: evenodd; stroke-width: 0.264583"
+					d="m 273.33132,370.15833 117.97325,3.6965 -0.0131,0.44482 -117.96502,-3.65287 z"
+				/>
+				<path
+					id="a"
+					style="fill: #b3b3b3; fill-rule: evenodd; stroke-width: 0.264583"
+					d="m 273.29196,373.16173 117.94866,3.17047 -0.0312,0.52715 -117.92204,-3.19767 z"
+				/>
+				<path
+					id="d"
+					style="fill: #b3b3b3; fill-rule: evenodd; stroke-width: 0.264583"
+					d="m 273.22485,376.11299 117.94887,2.57391 -0.0298,0.48612 -117.9176,-2.46153 z"
+				/>
+				<path
+					id="g"
+					style="fill: #b3b3b3; fill-rule: evenodd; stroke-width: 0.264583"
+					d="m 273.20802,379.05317 117.84566,2.07324 -0.0251,0.52071 -117.85188,-2.08618 z"
+				/>
+				<path
+					id="b"
+					style="fill: #cccccc; fill-rule: evenodd; stroke-width: 0.264583"
+					d="m 273.10831,382.15795 117.90408,1.36119 0.0114,0.61247 -117.87479,-1.56417 z"
+				/>
+				<path
+					id="highE"
+					style="fill: #cccccc; fill-rule: evenodd; stroke-width: 0.264583"
+					d="m 273.12126,385.05602 117.91602,0.90076 -0.0743,0.51003 -117.84699,-1.034 z"
+				/>
+			</g>
+		</svg>
