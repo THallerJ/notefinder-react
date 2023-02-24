@@ -1,12 +1,13 @@
 import Fretboard from "./Fretboard";
 import NoteButtonPanel from "./NoteButtonPanel";
-import { AppContextProvider } from "./AppContext";
+import store from "../redux/store";
+import { Provider } from "react-redux";
 
 function App() {
 	return (
-		<AppContextProvider>
+		<Provider store={store}>
 			<div className="bg-gray-900 min-h-screen p-6">
-				<div className="flex space-y-5 flex-col items-center min-h-screen">
+				<div className="flex space-y-5 flex-col items-center">
 					<h1 className="text-white text-5xl p-4">Notefinder</h1>
 					<Fretboard />
 					<div className="p-10">
@@ -14,7 +15,7 @@ function App() {
 					</div>
 				</div>
 			</div>
-		</AppContextProvider>
+		</Provider>
 	);
 }
 
