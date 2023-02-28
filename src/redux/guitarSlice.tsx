@@ -1,31 +1,43 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { GuitarString } from "../Enum";
+import { GuitarStringEnum, NoteEnum, guitarStringToNote } from "../utils/enum";
+import { iterateScale } from "../utils/chromaticScale";
 
-const getRandomInt = (range: number): number => {
-	return Math.floor(Math.random() * range) + 1;
-};
+const getRandomInt = (range?: number): number =>
+	Math.floor(Math.random() * (range ? range : 6));
 
-const getRandomGtrStr = (range: number): GuitarString => {
-	const objKeys = Object.values(GuitarString);
-	return objKeys[range] as GuitarString;
+const getRandomFret = (): number => getRandomInt(12) + 1;
+
+const getRandomGtrStr = (range?: number): GuitarStringEnum => {
+	const objKeys = Object.values(GuitarStringEnum);
+	return objKeys[getRandomInt(range)] as GuitarStringEnum;
 };
 
 type guitarState = {
-	currentNote: { fret: number; str: GuitarString };
-	allowedStrings: GuitarString[];
+	guitarCoord: { fret: number; str: GuitarStringEnum };
+	allowedStrings: GuitarStringEnum[];
+	correctNote?: NoteEnum;
+	checkAnswerFlag: boolean;
+	isSolved: boolean;
 };
 
 const initialState: guitarState = {
 	allowedStrings: [
-		GuitarString.LOW_E,
-		GuitarString.A,
-		GuitarString.D,
-		GuitarString.G,
-		GuitarString.B,
-		GuitarString.HIGH_E,
+		GuitarStringEnum.LOW_E,
+		GuitarStringEnum.A,
+		GuitarStringEnum.D,
+		GuitarStringEnum.G,
+		GuitarStringEnum.B,
+		GuitarStringEnum.HIGH_E,
 	],
-	currentNote: { fret: getRandomInt(12), str: getRandomGtrStr(6) },
+	guitarCoord: { fret: getRandomFret(), str: getRandomGtrStr() },
+	checkAnswerFlag: false,
+	isSolved: false,
 };
+
+initialState.correctNote = iterateScale(
+	guitarStringToNote(initialState.guitarCoord.str),
+	initialState.guitarCoord.fret
+);
 
 export const guitarSlice = createSlice({
 	name: "guitar",
@@ -33,32 +45,40 @@ export const guitarSlice = createSlice({
 	reducers: {
 		updateNote: (state) => {
 			let fretNum: number;
-			let str: GuitarString;
+			let str: GuitarStringEnum;
 
 			do {
-				fretNum = getRandomInt(12);
+				fretNum = getRandomFret();
 				str = getRandomGtrStr(state.allowedStrings.length);
 			} while (
-				fretNum === state.currentNote.fret &&
-				str === state.currentNote.str
+				fretNum === state.guitarCoord.fret &&
+				str === state.guitarCoord.str
 			);
 
-			state.currentNote = { fret: fretNum, str: str };
+			state.isSolved = false;
+			state.correctNote = iterateScale(guitarStringToNote(str), fretNum);
+			state.guitarCoord = { fret: fretNum, str: str };
 		},
-		filterStrings: (state, action: PayloadAction<GuitarString>) => {
+		checkAnswer: (state, action: PayloadAction<NoteEnum>) => {
+			if (action.payload === state.correctNote) state.isSolved = true;
+			state.checkAnswerFlag = !state.checkAnswerFlag;
+		},
+		filterStrings: (state, action: PayloadAction<GuitarStringEnum>) => {
 			const index = state.allowedStrings.indexOf(action.payload);
 
 			if (index !== -1) {
+				// remove GuitarString from the array
 				state.allowedStrings = [
 					...state.allowedStrings.slice(0, index),
 					...state.allowedStrings.slice(index + 1),
 				];
 			} else {
+				// add GuitarString to the array
 				state.allowedStrings = [...state.allowedStrings, action.payload];
 			}
 		},
 	},
 });
 
-export const {} = guitarSlice.actions;
+export const { updateNote, checkAnswer, filterStrings } = guitarSlice.actions;
 export default guitarSlice.reducer;

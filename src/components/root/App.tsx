@@ -1,6 +1,7 @@
-import Fretboard from "./Fretboard";
-import NoteButtonPanel from "./NoteButtonPanel";
-import store from "../redux/store";
+import Fretboard from "../fretboard/Fretboard";
+import NoteButtonPanel from "../note_button/NoteButtonPanel";
+import Settings from "../settings/Settings";
+import { store } from "../../redux/store";
 import { Provider } from "react-redux";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
 					<div className="p-10">
 						<NoteButtonPanel />
 					</div>
+					<Settings />
 				</div>
 			</div>
 		</Provider>
