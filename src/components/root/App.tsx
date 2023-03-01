@@ -4,7 +4,7 @@ import NoteButtonPanel from '../note_button/NoteButtonPanel';
 import Settings from '../settings/Settings';
 import { store } from '../../redux/store';
 
-function App() {
+const App = () => {
   return (
     <Provider store={store}>
       <div className="bg-gray-900 min-h-screen p-6">
@@ -19,6 +19,6 @@ function App() {
       </div>
     </Provider>
   );
-}
+};
 
 export default App;

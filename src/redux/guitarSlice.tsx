@@ -55,7 +55,7 @@ export const guitarSlice = createSlice({
         fretNum === state.guitarCoord.fret &&
         str === state.guitarCoord.str
       );
-
+      // TODO: no-param-reassign disable this somehow
       state.isSolved = false;
       state.correctNote = iterateScale(guitarStringToNote(str), fretNum);
       state.guitarCoord = { fret: fretNum, str };
@@ -69,7 +69,7 @@ export const guitarSlice = createSlice({
 
       if (index !== -1) {
         // remove GuitarSting from the array
-       state.allowedStrings = removeElemByIndex(state.allowedStrings,index);
+        state.allowedStrings = removeElemByIndex(state.allowedStrings, index);
       } else {
         // add GuitarString to the array
         state.allowedStrings = [...state.allowedStrings, action.payload];

@@ -20,6 +20,7 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
   rules: {
+    'no-param-reassign': ['error', { props: false }],
     'react/react-in-jsx-scope': 0,
     'react/require-default-props': 'off',
     'react/function-component-definition': [
@@ -29,6 +30,7 @@ module.exports = {
         unnamedComponents: 'arrow-function',
       },
     ],
+    'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
+    'import/prefer-default-export': 'off',
   },
-  'no-param-reassign': ['error', { props: false }],
 };

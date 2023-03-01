@@ -7,7 +7,7 @@ import { updateNote } from '../../redux/guitarSlice';
 import useUpdateNote from './useUpdateNote';
 
 // TODO: extract colors to tailwind setup file
-function Fretboard() {
+const Fretboard = () => {
   const drawnNoteId = 'drawnNote';
   const dispatch = useAppDispatch();
 
@@ -43,6 +43,6 @@ function Fretboard() {
       <FretboardSvg />
     </div>
   );
-}
+};
 
 export default Fretboard;
