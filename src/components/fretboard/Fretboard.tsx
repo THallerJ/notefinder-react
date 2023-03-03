@@ -4,7 +4,9 @@ import FretboardSvg from '../../assets/fretboard.svg';
 import useAppDispatch from '../../hooks/useAppDispatch';
 import useUserGuess from '../../hooks/useUserGuess';
 import { updateNote } from '../../redux/guitarSlice';
+import Dropdown from '../Dropdown';
 import useUpdateNote from './useUpdateNote';
+import ToggleStringButton from './ToggleStringButton';
 
 // TODO: extract colors to tailwind setup file
 const Fretboard = () => {
@@ -39,7 +41,20 @@ const Fretboard = () => {
   useUpdateNote();
 
   return (
-    <div className="fretboard">
+    <div>
+      <Dropdown
+        button={<ToggleStringButton />}
+        content={
+          <div>
+            <h6>High E</h6>
+            <h6>B</h6>
+            <h6>G</h6>
+            <h6>D</h6>
+            <h6>A</h6>
+            <h6>Low E</h6>
+          </div>
+        }
+      />
       <FretboardSvg />
     </div>
   );

@@ -27,7 +27,7 @@ const NoteButtonPanel = () => {
     return `${note.txt[0]}/${note.txt[1]}`;
   };
   return (
-    <div>
+    <form>
       {notes.map((note, i) => {
         const txt = getButtonText(note);
         return (
@@ -41,7 +41,7 @@ const NoteButtonPanel = () => {
           />
         );
       })}
-    </div>
+    </form>
   );
 };
 

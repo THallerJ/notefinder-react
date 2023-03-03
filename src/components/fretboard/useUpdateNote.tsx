@@ -7,7 +7,7 @@ const useUpdateNote = () => {
   const [cx, cy] = useGetNoteCoordinates();
 
   const drawNote = useCallback((x: number, y: number): void => {
-    select('svg')
+    select('#fretboardSvg')
       .append('g')
       .attr('transform', 'rotate(179,196.84328,192.51967)')
       .append('circle')
