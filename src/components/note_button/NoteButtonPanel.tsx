@@ -1,9 +1,18 @@
+import { useState } from 'react';
 import NoteButton from './NoteButton';
 import useAppDispatch from '../../hooks/useAppDispatch';
 import { checkAnswer } from '../../redux/guitarSlice';
 import { NoteEnum } from '../../utils/enum';
+import Dropdown from '../Dropdown';
+import NoteButtonSetting from './NoteButtonSetting';
 
 const NoteButtonPanel = () => {
+  enum NoteTypeEnum {
+    SHARP,
+    FLAT,
+    BOTH,
+  }
+  const [noteType, setNoteType] = useState(NoteTypeEnum.BOTH);
   const dispatch = useAppDispatch();
 
   type Note = { txt: [string, string?]; enum: NoteEnum };
@@ -22,12 +31,16 @@ const NoteButtonPanel = () => {
     { txt: ['B'], enum: NoteEnum.B },
   ];
 
-  const getButtonText = (note: Note) => {
-    if (note.txt.length === 1) return note.txt[0];
-    return `${note.txt[0]}/${note.txt[1]}`;
+  const getButtonText = (note: Note): string => {
+    if (note.txt.length === 1 || noteType === NoteTypeEnum.SHARP)
+      return note.txt[0];
+    if (noteType === NoteTypeEnum.BOTH) return `${note.txt[0]}/${note.txt[1]}`;
+    if (noteType === NoteTypeEnum.FLAT) return note?.txt[1] as string;
+    return '';
   };
+
   return (
-    <form>
+    <form className="flex flex-row">
       {notes.map((note, i) => {
         const txt = getButtonText(note);
         return (
@@ -41,6 +54,18 @@ const NoteButtonPanel = () => {
           />
         );
       })}
+      <div className="ml-3 self-end">
+        <Dropdown
+          button={<NoteButtonSetting />}
+          content={
+            <div className="flex flex-col font-medium text-gray-300">
+              <h6>Both</h6>
+              <h6>Sharps</h6>
+              <h6>Flats</h6>
+            </div>
+          }
+        />
+      </div>
     </form>
   );
 };

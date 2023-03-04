@@ -55,7 +55,7 @@ export const guitarSlice = createSlice({
         fretNum === state.guitarCoord.fret &&
         str === state.guitarCoord.str
       );
-      // TODO: no-param-reassign disable this somehow
+
       state.isSolved = false;
       state.correctNote = iterateScale(guitarStringToNote(str), fretNum);
       state.guitarCoord = { fret: fretNum, str };

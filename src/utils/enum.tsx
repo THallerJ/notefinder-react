@@ -1,9 +1,3 @@
-export enum NoteTypeEnum {
-  SHARP,
-  FLAT,
-  BOTH,
-}
-
 export enum GuitarStringEnum {
   LOW_E = 'lowE',
   A = 'a',

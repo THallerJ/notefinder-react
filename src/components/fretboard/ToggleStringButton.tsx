@@ -2,7 +2,8 @@ const ToggleStringButton = () => {
   return (
     <button
       type="button"
-      className=" inline-flex gap-x-2 rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm"
+      className="inline-flex gap-x-2 rounded-md border-gray-700 bg-black px-3 py-2 text-sm
+      font-semibold text-white shadow-sm focus:ring-1 focus:ring-gray-700"
     >
       <svg
         className="-mr-1 h-5 w-5 text-gray-400"
