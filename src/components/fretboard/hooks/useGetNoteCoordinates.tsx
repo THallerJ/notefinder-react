@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import { select } from 'd3';
-import useAppSelector from '../../hooks/useAppSelector';
-import { GuitarStringEnum } from '../../utils/enum';
+import useAppSelector from '../../../hooks/useAppSelector';
+import type { GuitarString } from '../../../types/GuitarString';
 
 const useGetNoteCoordinates = () => {
   const [coord, setCoord] = useState<number[]>([]);
@@ -12,7 +12,7 @@ const useGetNoteCoordinates = () => {
   };
 
   const getNoteCoordinates = useCallback(
-    (fret: number, str: GuitarStringEnum): { x: number; y: number } => {
+    (fret: number, str: GuitarString): { x: number; y: number } => {
       const currFret = getCoordinates(`fret${fret}`);
       const prevFret = getCoordinates(`fret${fret - 1}`);
       const gtrStr = getCoordinates(str);

@@ -294,32 +294,32 @@
 				inkscape:label="strings"
 			>
 				<path
-					id="lowE"
+					id="LOW_E"
 					style="fill: #b3b3b3; fill-rule: evenodd; stroke-width: 0.264583"
 					d="m 273.33132,370.15833 117.97325,3.6965 -0.0131,0.44482 -117.96502,-3.65287 z"
 				/>
 				<path
-					id="a"
+					id="A"
 					style="fill: #b3b3b3; fill-rule: evenodd; stroke-width: 0.264583"
 					d="m 273.29196,373.16173 117.94866,3.17047 -0.0312,0.52715 -117.92204,-3.19767 z"
 				/>
 				<path
-					id="d"
+					id="D"
 					style="fill: #b3b3b3; fill-rule: evenodd; stroke-width: 0.264583"
 					d="m 273.22485,376.11299 117.94887,2.57391 -0.0298,0.48612 -117.9176,-2.46153 z"
 				/>
 				<path
-					id="g"
+					id="G"
 					style="fill: #b3b3b3; fill-rule: evenodd; stroke-width: 0.264583"
 					d="m 273.20802,379.05317 117.84566,2.07324 -0.0251,0.52071 -117.85188,-2.08618 z"
 				/>
 				<path
-					id="b"
+					id="B"
 					style="fill: #cccccc; fill-rule: evenodd; stroke-width: 0.264583"
 					d="m 273.10831,382.15795 117.90408,1.36119 0.0114,0.61247 -117.87479,-1.56417 z"
 				/>
 				<path
-					id="highE"
+					id="HIGH_E"
 					style="fill: #cccccc; fill-rule: evenodd; stroke-width: 0.264583"
 					d="m 273.12126,385.05602 117.91602,0.90076 -0.0743,0.51003 -117.84699,-1.034 z"
 				/>

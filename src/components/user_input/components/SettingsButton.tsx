@@ -1,6 +1,6 @@
-import SettingsIcon from '../../assets/settings.svg';
+import SettingsIcon from '../../../assets/settings.svg';
 
-const NoteButtonSetting = () => {
+const SettingsButton = () => {
   return (
     <button type="button" className="group">
       <img
@@ -14,4 +14,4 @@ const NoteButtonSetting = () => {
   );
 };
 
-export default NoteButtonSetting;
+export default SettingsButton;

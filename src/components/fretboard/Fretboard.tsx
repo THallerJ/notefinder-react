@@ -4,10 +4,10 @@ import FretboardSvg from '../../assets/fretboard.svg';
 import useAppDispatch from '../../hooks/useAppDispatch';
 import useUserGuess from '../../hooks/useUserGuess';
 import { updateNote } from '../../redux/guitarSlice';
-import Dropdown from '../Dropdown';
-import useUpdateNote from './useUpdateNote';
-import ToggleStringButton from './ToggleStringButton';
-import ToggleStringContent from './ToggleStringContent';
+import Dropdown from '../form/Dropdown';
+import useUpdateNote from './hooks/useUpdateNote';
+import ToggleStringButton from './components/ToggleStringButton';
+import ToggleStringContent from './components/ToggleStringContent';
 
 const Fretboard = () => {
   const drawnNoteId = 'drawnNote';

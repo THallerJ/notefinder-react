@@ -1,7 +1,7 @@
 import { Provider } from 'react-redux';
-import { store } from './redux/store';
-import Header from './components/ui/Header';
-import Body from './components/ui/Body';
+import { store } from '../../redux/store';
+import Header from '../layouts/Header';
+import Body from '../layouts/Body';
 
 const App = () => {
   return (

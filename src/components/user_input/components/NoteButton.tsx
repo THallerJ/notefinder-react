@@ -1,6 +1,6 @@
 type NoteButtonProps = {
   note: string;
-  accidental?: boolean;
+  isNatural?: boolean;
   leftRounded?: boolean;
   rightRounded?: boolean;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
@@ -8,7 +8,7 @@ type NoteButtonProps = {
 
 const NoteButton = ({
   note,
-  accidental,
+  isNatural,
   leftRounded,
   rightRounded,
   onClick,
@@ -21,9 +21,9 @@ const NoteButton = ({
 			${leftRounded ? 'rounded-l-xl' : ''}
 			${rightRounded ? 'rounded-r-xl' : ''}
 			${
-        accidental
-          ? 'bg-black text-white hover:bg-[#080808]'
-          : 'bg-white text-black hover:bg-gray-300'
+        isNatural
+          ? 'bg-white text-black hover:bg-gray-300'
+          : 'bg-black text-white hover:bg-[#080808]'
       }
 			`}
     >
