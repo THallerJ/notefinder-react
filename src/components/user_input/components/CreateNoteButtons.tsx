@@ -40,7 +40,7 @@ const CreateNoteButtons = ({ accidental }: CreateNoteButtonsProps) => {
         const txt = getButtonText(n);
         return (
           <NoteButton
-            key={txt}
+            key={`${txt}NoteButton`}
             note={txt}
             isNatural={n.txt.length === 1}
             leftRounded={i === 0}

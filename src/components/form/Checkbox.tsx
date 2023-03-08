@@ -1,9 +1,16 @@
 type CheckboxProps = {
   text: string;
+  defaultChecked?: boolean;
   checked?: boolean;
+  onChange: () => void;
 };
 
-const Checkbox = ({ text, checked }: CheckboxProps) => {
+const Checkbox = ({
+  text,
+  defaultChecked,
+  onChange: onClick,
+  checked,
+}: CheckboxProps) => {
   const id = `${text}id`;
   return (
     <label htmlFor={id} className="flex items-center text-sm font-medium">
@@ -11,7 +18,9 @@ const Checkbox = ({ text, checked }: CheckboxProps) => {
         type="checkbox"
         id={id}
         className="h-4 w-4 rounded-3xl"
-        defaultChecked={checked}
+        defaultChecked={defaultChecked}
+        checked={checked}
+        onChange={onClick}
       />
       <span className="ml-3 tracking-wide text-gray-300">{text}</span>
     </label>

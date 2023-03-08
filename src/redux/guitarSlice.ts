@@ -11,9 +11,7 @@ const getRandomInt = (range: number): number =>
 const getRandomFret = (): number => getRandomInt(12) + 1;
 
 const getRandomGtrStr = (array?: GuitarString[]): GuitarString => {
-  let temp: GuitarString[];
-  if (array) temp = array;
-  else temp = ['LOW_E', 'A', 'D', 'G', 'B', 'HIGH_E'];
+  const temp = array || ['LOW_E', 'A', 'D', 'G', 'B', 'HIGH_E'];
   return temp[getRandomInt(temp.length)] as GuitarString;
 };
 
@@ -62,9 +60,10 @@ export const guitarSlice = createSlice({
       state.checkAnswerFlag = !state.checkAnswerFlag;
     },
     filterStrings: (state, action: PayloadAction<GuitarString>) => {
-      const index = state.allowedStrings.indexOf(action.payload);
+      const gtrStr = action.payload;
+      const index = state.allowedStrings.indexOf(gtrStr);
 
-      if (index !== -1) {
+      if (index !== -1 && state.allowedStrings.length > 1) {
         // remove GuitarSting from the array
         state.allowedStrings = removeElemByIndex(state.allowedStrings, index);
       } else {
