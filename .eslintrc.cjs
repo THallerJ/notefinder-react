@@ -35,4 +35,5 @@ module.exports = {
     'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
     'import/prefer-default-export': 'off',
   },
+  ignorePatterns: ['*.ts', '*.cjs', '*.js'],
 };
