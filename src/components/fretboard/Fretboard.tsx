@@ -45,6 +45,7 @@ const Fretboard = () => {
       <Dropdown
         button={<ToggleStringButton />}
         content={<ToggleStringContent />}
+        left
       />
       <FretboardSvg />
     </div>
