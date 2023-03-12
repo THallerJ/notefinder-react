@@ -1,6 +1,6 @@
 import { select } from 'd3';
 import { useCallback } from 'react';
-import FretboardSvg from '../../assets/fretboard.svg';
+import { ReactComponent as FretboardSvg } from '../../assets/fretboard.svg';
 import useAppDispatch from '../../hooks/useAppDispatch';
 import useUserGuess from '../../hooks/useUserGuess';
 import { updateNote } from '../../redux/guitarSlice';
@@ -47,7 +47,7 @@ const Fretboard = () => {
         content={<ToggleStringContent />}
         left
       />
-      <FretboardSvg />
+      <FretboardSvg className="min-w-full" />
     </div>
   );
 };

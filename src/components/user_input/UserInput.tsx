@@ -12,7 +12,7 @@ const UserInput = () => {
     useNoteButtonData();
 
   return (
-    <form className="flex flex-row">
+    <form className="flex flex-row justify-center">
       <CreateNoteButtons
         accidentalPref={accidentalPref}
         noteButtonData={noteButtonState}
