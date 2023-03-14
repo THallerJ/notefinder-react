@@ -7,15 +7,15 @@ type DropdownProps = {
 
 const Dropdown = ({ button, content, left, right }: DropdownProps) => {
   return (
-    <div className="relative inline-block text-left">
-      <div className="peer">{button}</div>
+    <div className="group relative inline-block">
+      {button}
       <div
-        className={`absolute z-50 mt-2 min-w-[6rem] bg-gray-700 p-4 opacity-0 
-        shadow-lg ring-1 ring-inset ring-gray-900 transition-opacity duration-300 
-        peer-focus-within:opacity-100 peer-hover:opacity-100 
-        ${right && 'right-0'} ${left && 'left-0'}${
-          !left && !right && 'left-1/2 -translate-x-1/2'
-        }`}
+        className={`absolute z-10 mt-0 min-w-[6rem] scale-0 bg-gray-700 
+          p-4 shadow-lg ring-1 ring-inset ring-gray-900 duration-150 
+          ease-in-out group-focus-within:scale-100 group-hover:scale-100
+          ${right && 'right-0 origin-top-right'} 
+          ${left && 'left-0 origin-top-left'} 
+          ${!left && !right && 'left-1/2 origin-top -translate-x-1/2'}`}
       >
         {content}
       </div>

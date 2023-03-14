@@ -1,15 +1,11 @@
-import SettingsIcon from '../../../assets/settings.svg';
+import { ReactComponent as SettingsIcon } from '../../../assets/settings.svg';
 
 const SettingsButton = () => {
   return (
-    <button type="button" className="group rounded-full focus:bg-gray-700">
-      <img
-        alt="settings button"
-        src={SettingsIcon}
-        height="30"
-        width="30"
-        className="transition-transform duration-700 
-        valid:rotate-90 group-hover:rotate-90 group-focus:rotate-90"
+    <button type="button" className="group">
+      <SettingsIcon
+        className="h-8 w-8 transition-transform duration-150 group-focus-within:rotate-180 
+          group-hover:rotate-180 group-focus:fill-gray-400"
       />
     </button>
   );

@@ -6,5 +6,8 @@ export default defineConfig({
   server: {
     port: 5000,
   },
-  plugins: [react(), svgr({ include: '**/*fretboard.svg' })],
+  plugins: [
+    react(),
+    svgr({ include: ['**/*fretboard.svg', '**/*settings.svg'] }),
+  ],
 });
