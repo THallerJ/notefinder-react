@@ -1,6 +1,6 @@
 import NoteButton from './NoteButton';
 import useAppDispatch from '../../../hooks/useAppDispatch';
-import type { Accidental } from '../types/Accidental';
+import type { Accidental } from '../../../types/Accidental';
 import { checkAnswer } from '../../../redux/guitarSlice';
 import type { NoteButtonData } from '../types/NoteButtonData';
 

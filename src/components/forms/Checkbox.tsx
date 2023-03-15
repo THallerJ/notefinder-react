@@ -22,7 +22,7 @@ const Checkbox = ({
         checked={checked}
         onChange={onClick}
       />
-      <span className="ml-3 tracking-wide text-gray-300">{text}</span>
+      <span className="ml-3 tracking-wide text-[#d1d1d1]">{text}</span>
     </label>
   );
 };

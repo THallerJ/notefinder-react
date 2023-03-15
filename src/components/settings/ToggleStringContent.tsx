@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { GuitarString } from '../../../types/GuitarString';
-import ToggleStringCheckbox from './ToggleStringCheckbox';
+import { GuitarString } from '../../types/GuitarString';
+import ToggleStringCheckbox from './components/ToggleStringCheckbox';
 
 const ToggleStringContent = () => {
   type GuitarStrings = { guitarString: GuitarString; labelText?: string };

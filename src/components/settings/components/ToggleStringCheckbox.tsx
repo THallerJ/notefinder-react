@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Checkbox from '../../form/Checkbox';
+import Checkbox from '../../forms/Checkbox';
 import { GuitarString } from '../../../types/GuitarString';
 import useAppDispatch from '../../../hooks/useAppDispatch';
 import useAppSelector from '../../../hooks/useAppSelector';

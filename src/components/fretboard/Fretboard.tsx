@@ -4,14 +4,16 @@ import { ReactComponent as FretboardSvg } from '../../assets/fretboard.svg';
 import useAppDispatch from '../../hooks/useAppDispatch';
 import useUserGuess from '../../hooks/useUserGuess';
 import { updateNote } from '../../redux/guitarSlice';
-import Dropdown from '../form/Dropdown';
+import Dropdown from '../forms/Dropdown';
 import useUpdateNote from './hooks/useUpdateNote';
 import ToggleStringButton from './components/ToggleStringButton';
-import ToggleStringContent from './components/ToggleStringContent';
+import ToggleStringContent from '../settings/ToggleStringContent';
+import useMd from '../../hooks/useMd';
 
 const Fretboard = () => {
   const drawnNoteId = 'drawnNote';
   const dispatch = useAppDispatch();
+  const md = useMd();
 
   const resetNoteColor = (): void => {
     select(`#${drawnNoteId}`).attr('fill', 'cyan');
@@ -40,13 +42,23 @@ const Fretboard = () => {
   useUserGuess({ onCorrect, onIncorrect, onCorrectDelay, onIncorrectDelay });
   useUpdateNote();
 
+  const renderToggleStringDropdown = () => {
+    if (md) {
+      return (
+        <Dropdown
+          button={<ToggleStringButton />}
+          content={<ToggleStringContent />}
+          left
+        />
+      );
+    }
+
+    return null;
+  };
+
   return (
     <div>
-      <Dropdown
-        button={<ToggleStringButton />}
-        content={<ToggleStringContent />}
-        left
-      />
+      {renderToggleStringDropdown()}
       <FretboardSvg className="min-w-full" />
     </div>
   );

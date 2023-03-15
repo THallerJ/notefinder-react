@@ -17,13 +17,14 @@ const NoteButton = ({
     <button
       type="button"
       onClick={onClick}
-      className={` w-24 py-4 font-bold shadow 
+      className={`w-20 rounded-sm bg-[#3c3c3c] py-4 font-medium text-white
+       shadow active:bg-black md:w-24 md:rounded-none md:font-bold
 			${leftRounded && 'md:rounded-l-xl'}
 			${rightRounded && 'md:rounded-r-xl'}
 			${
         isNatural
-          ? 'bg-white text-black hover:bg-gray-300'
-          : 'bg-black text-white hover:bg-[#080808]'
+          ? 'md:bg-white md:text-black md:hover:bg-gray-300'
+          : 'md:bg-black md:text-white md:hover:bg-[#080808]'
       }
 			`}
     >

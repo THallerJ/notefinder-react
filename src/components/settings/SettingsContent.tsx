@@ -1,24 +1,24 @@
-import RadioButton from '../../form/RadioButton';
-import type { Accidental } from '../types/Accidental';
-import type { NoteButtonActionType } from '../types/NoteButtonActionType';
+import RadioButton from '../forms/RadioButton';
+import type { Accidental } from '../../types/Accidental';
+import type { NoteButtonActionType } from '../../types/NoteButtonActionType';
 
-type DropdownContentProps = {
+type SettingsContentProps = {
   setAccidental: React.Dispatch<React.SetStateAction<Accidental>>;
   dispatch: React.Dispatch<NoteButtonActionType>;
 };
 
-const SettingsContent = ({ setAccidental, dispatch }: DropdownContentProps) => {
+const SettingsContent = ({ setAccidental, dispatch }: SettingsContentProps) => {
   const renderTitle = (title: string): React.ReactNode => {
     return (
       <div>
-        <span className="text-sm font-medium text-gray-300">{title}</span>
-        <div className="mt-2 grow border-t border-gray-800" />
+        <span className=" text-base font-medium text-[#d1d1d1]">{title}</span>
+        <div className="mt-2 grow border-t border-[#d1d1d1]" />
       </div>
     );
   };
 
   return (
-    <div className="flex flex-row space-x-5 divide-x divide-gray-800">
+    <div className="flex flex-row space-x-5 divide-x divide-[#d1d1d1]">
       <div className="flex flex-col space-y-2">
         {renderTitle('Accidental')}
         <RadioButton

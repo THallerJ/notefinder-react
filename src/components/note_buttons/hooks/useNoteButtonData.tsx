@@ -1,6 +1,6 @@
 import { useReducer } from 'react';
 import type { Note } from '../../../types/Note';
-import { NoteButtonActionType } from '../types/NoteButtonActionType';
+import { NoteButtonActionType } from '../../../types/NoteButtonActionType';
 
 const useNoteButtonData = () => {
   type NoteButtonType = {
