@@ -8,12 +8,10 @@ import Dropdown from '../forms/Dropdown';
 import useUpdateNote from './hooks/useUpdateNote';
 import ToggleStringButton from './components/ToggleStringButton';
 import ToggleStringContent from '../settings/ToggleStringContent';
-import useMd from '../../hooks/useMd';
 
 const Fretboard = () => {
   const drawnNoteId = 'drawnNote';
   const dispatch = useAppDispatch();
-  const md = useMd();
 
   const resetNoteColor = (): void => {
     select(`#${drawnNoteId}`).attr('fill', 'cyan');
@@ -42,23 +40,15 @@ const Fretboard = () => {
   useUserGuess({ onCorrect, onIncorrect, onCorrectDelay, onIncorrectDelay });
   useUpdateNote();
 
-  const renderToggleStringDropdown = () => {
-    if (md) {
-      return (
-        <Dropdown
-          button={<ToggleStringButton />}
-          content={<ToggleStringContent />}
-          left
-        />
-      );
-    }
-
-    return null;
-  };
-
   return (
     <div>
-      {renderToggleStringDropdown()}
+      <div className="hidden md:block">
+        <Dropdown
+          button={<ToggleStringButton />}
+          content={<ToggleStringContent id="body" />}
+          left
+        />
+      </div>
       <FretboardSvg className="min-w-full" />
     </div>
   );

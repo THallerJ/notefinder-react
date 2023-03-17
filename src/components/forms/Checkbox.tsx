@@ -1,4 +1,5 @@
 type CheckboxProps = {
+  id: string;
   text: string;
   defaultChecked?: boolean;
   checked?: boolean;
@@ -6,17 +7,21 @@ type CheckboxProps = {
 };
 
 const Checkbox = ({
+  id,
   text,
   defaultChecked,
   onChange: onClick,
   checked,
 }: CheckboxProps) => {
-  const id = `${text}id`;
+  const checkboxId = `${id + text}checkbox`;
   return (
-    <label htmlFor={id} className="flex items-center text-sm font-medium">
+    <label
+      htmlFor={checkboxId}
+      className="flex items-center text-sm font-medium"
+    >
       <input
         type="checkbox"
-        id={id}
+        id={checkboxId}
         className="h-4 w-4 rounded-3xl"
         defaultChecked={defaultChecked}
         checked={checked}

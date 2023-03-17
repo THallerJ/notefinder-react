@@ -2,7 +2,11 @@ import { useState } from 'react';
 import { GuitarString } from '../../types/GuitarString';
 import ToggleStringCheckbox from './components/ToggleStringCheckbox';
 
-const ToggleStringContent = () => {
+type ToggleStringContentProps = {
+  id: string;
+};
+
+const ToggleStringContent = ({ id }: ToggleStringContentProps) => {
   type GuitarStrings = { guitarString: GuitarString; labelText?: string };
   const guitarStringsArray: GuitarStrings[] = [
     { guitarString: 'HIGH_E', labelText: 'High E' },
@@ -23,8 +27,9 @@ const ToggleStringContent = () => {
     return guitarStringsArray.map((elem) => {
       return (
         <ToggleStringCheckbox
+          id={id}
           key={`${elem.guitarString}StringCheckbox`}
-          labelText={elem.labelText || elem.guitarString}
+          text={elem.labelText || elem.guitarString}
           guitarString={elem.guitarString}
           toggledCount={toggledCount}
           setToggledCount={setToggledCount}

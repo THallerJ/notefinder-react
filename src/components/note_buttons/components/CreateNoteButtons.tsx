@@ -1,38 +1,31 @@
 import NoteButton from './NoteButton';
 import useAppDispatch from '../../../hooks/useAppDispatch';
-import type { Accidental } from '../../../types/Accidental';
 import { checkAnswer } from '../../../redux/guitarSlice';
-import type { NoteButtonData } from '../types/NoteButtonData';
+import useAppSelector from '../../../hooks/useAppSelector';
 
-type CreateNoteButtonsProps = {
-  accidentalPref: Accidental;
-  noteButtonData: NoteButtonData[];
-};
-
-const CreateNoteButtons = ({
-  accidentalPref,
-  noteButtonData: buttonNotes,
-}: CreateNoteButtonsProps) => {
+const CreateNoteButtons = () => {
   const dispatch = useAppDispatch();
+  const notes = useAppSelector((state) => state.prefs.notes);
+  const accidental = useAppSelector((state) => state.prefs.accidental);
 
-  const getButtonText = (note: NoteButtonData): string => {
-    if (note.txt.length === 1 || accidentalPref === 'SHARP') return note.txt[0];
-    if (accidentalPref === 'BOTH') return `${note.txt[0]}/${note.txt[1]}`;
-    if (accidentalPref === 'FLAT') return note?.txt[1] as string;
+  const getButtonText = (note: [string, string?]): string => {
+    if (note.length === 1 || accidental === 'SHARP') return note[0];
+    if (accidental === 'BOTH') return `${note[0]}/${note[1]}`;
+    if (accidental === 'FLAT') return note?.[1] as string;
     return '';
   };
 
   return (
     <>
-      {buttonNotes.map((n, i) => {
-        const txt = getButtonText(n);
+      {notes.map((n, i) => {
+        const txt = getButtonText(n.txt);
         return (
           <NoteButton
             key={`${txt}NoteButton`}
             note={txt}
             isNatural={n.txt.length === 1}
             leftRounded={i === 0}
-            rightRounded={i === buttonNotes.length - 1}
+            rightRounded={i === notes.length - 1}
             onClick={() => dispatch(checkAnswer(n.note))}
           />
         );

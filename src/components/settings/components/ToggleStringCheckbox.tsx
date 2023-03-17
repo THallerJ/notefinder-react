@@ -6,14 +6,16 @@ import useAppSelector from '../../../hooks/useAppSelector';
 import { filterStrings, updateNote } from '../../../redux/guitarSlice';
 
 type ToggleStringCheckboxProp = {
-  labelText: string;
+  id: string;
+  text: string;
   guitarString: GuitarString;
   toggledCount: number;
   setToggledCount: React.Dispatch<React.SetStateAction<number>>;
 };
 
 const ToggleStringCheckbox = ({
-  labelText,
+  id,
+  text,
   guitarString,
   toggledCount,
   setToggledCount,
@@ -35,7 +37,7 @@ const ToggleStringCheckbox = ({
     if (curGtrStr === guitarString) dispatch(updateNote());
   };
 
-  return <Checkbox text={labelText} checked={toggled} onChange={onChange} />;
+  return <Checkbox id={id} text={text} checked={toggled} onChange={onChange} />;
 };
 
 export default ToggleStringCheckbox;

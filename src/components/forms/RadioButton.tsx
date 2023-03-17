@@ -1,19 +1,26 @@
 type RadioButtonProps = {
+  id: string;
   text: string;
   checked?: boolean;
   name: string;
   onClick: React.MouseEventHandler<HTMLInputElement>;
 };
 
-const RadioButton = ({ text, checked, name, onClick }: RadioButtonProps) => {
-  const id = `${text + name}Id`;
+const RadioButton = ({
+  id,
+  text,
+  checked,
+  name,
+  onClick,
+}: RadioButtonProps) => {
+  const radioId = `${id + text}radio`;
   return (
-    <label htmlFor={id} className="flex items-center text-sm font-medium">
+    <label htmlFor={radioId} className="flex items-center text-sm font-medium">
       <input
         type="radio"
-        id={id}
+        id={radioId}
         name={name}
-        className="h-4 w-4 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 "
+        className="h-4 w-4"
         defaultChecked={checked}
         onClick={onClick}
       />

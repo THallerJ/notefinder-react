@@ -1,13 +1,14 @@
 import RadioButton from '../forms/RadioButton';
-import type { Accidental } from '../../types/Accidental';
-import type { NoteButtonActionType } from '../../types/NoteButtonActionType';
+import useAppDispatch from '../../hooks/useAppDispatch';
+import { alphaSort, pianoSort, setAccidendtal } from '../../redux/prefsSlice';
 
-type SettingsContentProps = {
-  setAccidental: React.Dispatch<React.SetStateAction<Accidental>>;
-  dispatch: React.Dispatch<NoteButtonActionType>;
+type SettingsContentProp = {
+  id: string;
 };
 
-const SettingsContent = ({ setAccidental, dispatch }: SettingsContentProps) => {
+const SettingsContent = ({ id }: SettingsContentProp) => {
+  const dispatch = useAppDispatch();
+
   const renderTitle = (title: string): React.ReactNode => {
     return (
       <div>
@@ -22,34 +23,39 @@ const SettingsContent = ({ setAccidental, dispatch }: SettingsContentProps) => {
       <div className="flex flex-col space-y-2">
         {renderTitle('Accidental')}
         <RadioButton
+          id={id}
           text="Both"
           name="accidental"
-          onClick={() => setAccidental('BOTH')}
+          onClick={() => dispatch(setAccidendtal('BOTH'))}
           checked
         />
         <RadioButton
+          id={id}
           text="Sharps"
           name="accidental"
-          onClick={() => setAccidental('SHARP')}
+          onClick={() => dispatch(setAccidendtal('SHARP'))}
         />
         <RadioButton
+          id={id}
           text="Flats"
           name="accidental"
-          onClick={() => setAccidental('FLAT')}
+          onClick={() => dispatch(setAccidendtal('FLAT'))}
         />
       </div>
       <div className="flex flex-col space-y-2 pl-5">
         {renderTitle('Button Order')}
         <RadioButton
+          id={id}
           text="Piano"
           name="sorting"
-          onClick={() => dispatch('PIANO_SORT')}
+          onClick={() => dispatch(pianoSort())}
           checked
         />
         <RadioButton
+          id={id}
           text="Alphabetical"
           name="sorting"
-          onClick={() => dispatch('ALPHA_SORT')}
+          onClick={() => dispatch(alphaSort())}
         />
       </div>
     </div>
