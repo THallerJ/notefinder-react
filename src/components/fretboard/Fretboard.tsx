@@ -7,7 +7,7 @@ import { updateNote } from '../../redux/guitarSlice';
 import Dropdown from '../forms/Dropdown';
 import useUpdateNote from './hooks/useUpdateNote';
 import ToggleStringButton from './components/ToggleStringButton';
-import ToggleStringContent from '../settings/ToggleStringContent';
+import ToggleStringsSetting from '../settings/ToggleStringsSetting';
 
 const Fretboard = () => {
   const drawnNoteId = 'drawnNote';
@@ -40,12 +40,13 @@ const Fretboard = () => {
   useUserGuess({ onCorrect, onIncorrect, onCorrectDelay, onIncorrectDelay });
   useUpdateNote();
 
+  // TODO: change scale of FretboardSvg using scale-[percent%] and slider
   return (
     <div>
       <div className="hidden md:block">
         <Dropdown
           button={<ToggleStringButton />}
-          content={<ToggleStringContent id="body" />}
+          content={<ToggleStringsSetting id="body" />}
           left
         />
       </div>

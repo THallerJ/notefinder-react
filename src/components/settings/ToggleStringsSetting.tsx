@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { GuitarString } from '../../types/GuitarString';
 import ToggleStringCheckbox from './components/ToggleStringCheckbox';
+import SettingTitle from './components/SettingTitle';
 
 type ToggleStringContentProps = {
   id: string;
+  showTitle?: boolean;
 };
 
-const ToggleStringContent = ({ id }: ToggleStringContentProps) => {
+const ToggleStringsSetting = ({ id, showTitle }: ToggleStringContentProps) => {
   type GuitarStrings = { guitarString: GuitarString; labelText?: string };
   const guitarStringsArray: GuitarStrings[] = [
     { guitarString: 'HIGH_E', labelText: 'High E' },
@@ -23,7 +25,7 @@ const ToggleStringContent = ({ id }: ToggleStringContentProps) => {
     guitarStringsArray.length
   );
 
-  const generateCheckboxes = (): React.ReactNode => {
+  const renderCheckboxes = (): React.ReactNode => {
     return guitarStringsArray.map((elem) => {
       return (
         <ToggleStringCheckbox
@@ -38,7 +40,20 @@ const ToggleStringContent = ({ id }: ToggleStringContentProps) => {
     });
   };
 
-  return <div className="flex flex-col space-y-2">{generateCheckboxes()}</div>;
+  const renderTitle = () => {
+    if (showTitle) {
+      return <SettingTitle>Toggle Strings</SettingTitle>;
+    }
+
+    return null;
+  };
+
+  return (
+    <div className="flex flex-col space-y-2">
+      {renderTitle()}
+      {renderCheckboxes()}
+    </div>
+  );
 };
 
-export default ToggleStringContent;
+export default ToggleStringsSetting;

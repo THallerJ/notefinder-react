@@ -1,7 +1,7 @@
 import SettingsButton from './components/SettingsButton';
 import Dropdown from '../forms/Dropdown';
-import SettingsContent from '../settings/SettingsContent';
 import CreateNoteButtons from './components/CreateNoteButtons';
+import SettingsContent from './components/SettingsContent';
 
 const UserInput = () => {
   return (
@@ -14,7 +14,7 @@ const UserInput = () => {
         <Dropdown
           right
           button={<SettingsButton />}
-          content={<SettingsContent id="body" />}
+          content={<SettingsContent />}
         />
       </div>
     </form>
