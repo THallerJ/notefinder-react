@@ -1,5 +1,5 @@
 import { select } from 'd3';
-import { useCallback } from 'react';
+import { useCallback, useState } from 'react';
 import { ReactComponent as FretboardSvg } from '../../assets/fretboard.svg';
 import useAppDispatch from '../../hooks/useAppDispatch';
 import useUserGuess from '../../hooks/useUserGuess';
@@ -8,10 +8,15 @@ import Dropdown from '../forms/Dropdown';
 import useUpdateNote from './hooks/useUpdateNote';
 import ToggleStringButton from './components/ToggleStringButton';
 import ToggleStringsSetting from '../settings/ToggleStringsSetting';
+import ScaleSlider from './components/ScaleSlider';
+import useFretboardScaleClass from './hooks/useFretboardScaleClass';
 
 const Fretboard = () => {
   const drawnNoteId = 'drawnNote';
   const dispatch = useAppDispatch();
+  const [scale, setScale] = useState<string>('100');
+  // tailwind class used for scaling the fretboard
+  const scaleClass = useFretboardScaleClass({ scale });
 
   const resetNoteColor = (): void => {
     select(`#${drawnNoteId}`).attr('fill', 'cyan');
@@ -40,7 +45,6 @@ const Fretboard = () => {
   useUserGuess({ onCorrect, onIncorrect, onCorrectDelay, onIncorrectDelay });
   useUpdateNote();
 
-  // TODO: change scale of FretboardSvg using scale-[percent%] and slider
   return (
     <div>
       <div className="hidden md:block">
@@ -50,7 +54,10 @@ const Fretboard = () => {
           left
         />
       </div>
-      <FretboardSvg className="min-w-full" />
+      <FretboardSvg className={`min-w-full ${scaleClass}`} />
+      <div className="mt-8 flex h-2 w-full items-center justify-center">
+        <ScaleSlider setScale={setScale} />
+      </div>
     </div>
   );
 };
