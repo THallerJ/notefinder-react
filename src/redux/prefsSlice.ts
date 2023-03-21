@@ -8,9 +8,10 @@ type NoteButtonType = {
   note: Note;
 };
 
-type PrefsState = {
+type PrefsSliceState = {
   notes: NoteButtonType[];
   accidental: Accidental;
+  isLeftHanded: boolean
 };
 
 const notes: NoteButtonType[] = [
@@ -28,9 +29,10 @@ const notes: NoteButtonType[] = [
   { pianoKey: 11, txt: ['B'], note: 'B' },
 ];
 
-const initialState: PrefsState = {
+const initialState: PrefsSliceState = {
   notes: notes,
   accidental: 'BOTH',
+  isLeftHanded: false
 };
 
 export const prefsSlice = createSlice({
@@ -48,8 +50,14 @@ export const prefsSlice = createSlice({
     setAccidendtal: (state, action: PayloadAction<Accidental>) => {
       state.accidental = action.payload;
     },
+    setLeftHanded: (state, action: PayloadAction<boolean>) => {
+      state.isLeftHanded = action.payload
+    },
+    toggleLeftHanded: (state) => {
+      state.isLeftHanded = !state.isLeftHanded
+    }
   },
 });
 
-export const { pianoSort, alphaSort, setAccidendtal } = prefsSlice.actions;
+export const { pianoSort, alphaSort, setAccidendtal, setLeftHanded, toggleLeftHanded } = prefsSlice.actions;
 export default prefsSlice.reducer;

@@ -3,7 +3,7 @@ import Checkbox from '../../forms/Checkbox';
 import { GuitarString } from '../../../types/GuitarString';
 import useAppDispatch from '../../../hooks/useAppDispatch';
 import useAppSelector from '../../../hooks/useAppSelector';
-import { filterStrings, updateNote } from '../../../redux/guitarSlice';
+import { filterStrings, updateNote } from '../../../redux/noteSlice';
 
 type ToggleStringCheckboxProp = {
   id: string;

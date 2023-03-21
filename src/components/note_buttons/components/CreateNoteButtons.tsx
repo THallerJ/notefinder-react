@@ -1,6 +1,6 @@
 import NoteButton from './NoteButton';
 import useAppDispatch from '../../../hooks/useAppDispatch';
-import { checkAnswer } from '../../../redux/guitarSlice';
+import { checkAnswer } from '../../../redux/noteSlice';
 import useAppSelector from '../../../hooks/useAppSelector';
 
 const CreateNoteButtons = () => {

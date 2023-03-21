@@ -7,7 +7,7 @@ type HeaderProps = {
 
 const Header = ({ setShowSidebar }: HeaderProps) => {
   return (
-    <header className="sticky top-0 flex items-center justify-between bg-black py-1 px-4 md:py-2 md:px-4">
+    <header className="sticky top-0 z-30 flex items-center justify-between bg-black py-1 px-4 md:py-2 md:px-4">
       <div className="flex flex-row items-center space-x-3">
         <button
           type="button"

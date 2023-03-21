@@ -10,7 +10,7 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <div className="relative min-h-screen bg-[#1c1c1e]">
+      <div className="relative min-h-screen overflow-auto bg-[#1c1c1e]">
         <Header setShowSidebar={setShowSidebar} />
         <Body />
         <Sidebar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />

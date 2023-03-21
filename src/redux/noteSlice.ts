@@ -15,7 +15,7 @@ const getRandomGtrStr = (array?: GuitarString[]): GuitarString => {
   return temp[getRandomInt(temp.length)] as GuitarString;
 };
 
-type GuitarState = {
+type NoteSliceState = {
   guitarCoord: { fret: number; str: GuitarString };
   allowedStrings: GuitarString[];
   correctNote?: Note;
@@ -23,7 +23,7 @@ type GuitarState = {
   isSolved: boolean;
 };
 
-const initialState: GuitarState = {
+const initialState: NoteSliceState = {
   allowedStrings: ['LOW_E', 'A', 'D', 'G', 'B', 'HIGH_E'],
   guitarCoord: { fret: getRandomFret(), str: getRandomGtrStr() },
   checkAnswerFlag: false,
@@ -35,7 +35,7 @@ initialState.correctNote = iterateScale(
   initialState.guitarCoord.fret
 );
 
-export const guitarSlice = createSlice({
+export const noteSlice = createSlice({
   name: 'guitar',
   initialState,
   reducers: {
@@ -74,5 +74,5 @@ export const guitarSlice = createSlice({
   },
 });
 
-export const { updateNote, checkAnswer, filterStrings } = guitarSlice.actions;
-export default guitarSlice.reducer;
+export const { updateNote, checkAnswer, filterStrings } = noteSlice.actions;
+export default noteSlice.reducer;
