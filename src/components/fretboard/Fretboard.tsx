@@ -22,11 +22,11 @@ const Fretboard = () => {
   const scaleClass = useFretboardScaleClass({ scale });
 
   const resetNoteColor = (): void => {
-    select(`#${drawnNoteId}`).attr('fill', 'cyan');
+    select(`#${drawnNoteId}`).attr('fill', '#80d8ff');
   };
 
   const onCorrect = useCallback((): void => {
-    select(`#${drawnNoteId}`).attr('fill', 'green');
+    select(`#${drawnNoteId}`).attr('fill', '#00c853');
   }, []);
 
   const onCorrectDelay = useCallback(() => {
@@ -38,7 +38,7 @@ const Fretboard = () => {
   // in development mode. This is caused by strict mode and
   // is not an issue in production.
   const onIncorrect = useCallback((): void => {
-    select(`#${drawnNoteId}`).attr('fill', 'red');
+    select(`#${drawnNoteId}`).attr('fill', '#f44336');
   }, []);
 
   const onIncorrectDelay = useCallback((): void => {
