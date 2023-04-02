@@ -14,7 +14,8 @@ const useUpdateNote = () => {
       .attr('id', drawnNoteId)
       .attr('r', 1.25)
       .attr('cx', x)
-      .attr('cy', y);
+      .attr('cy', y)
+      .attr('fill', '#80d8ff');
   }, []);
 
   const update = useCallback(
